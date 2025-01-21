@@ -29,7 +29,6 @@ async def dynamic(callback: CallbackQuery):
 async def test_button(message: Message):
    await message.answer('Обработка нажатия на reply кнопку')
 
-
 async def main():                                  # цикл обработки сообщений
     await dp.start_polling(bot)                    # запуск обработки сообщений
 
