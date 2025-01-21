@@ -5,17 +5,16 @@ from aiogram.types import Message, FSInputFile
 import random
 from gtts import gTTS
 import os
-
 from googletrans import Translator
-
 from config import TOKEN
+import keyboards as kb
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
 
 @dp.message(CommandStart())
 async def start(message: Message):
-    await message.answer(f"Доброго времени, {message.from_user.full_name} напиши мне любой текст, и я переведу его на английский язык.")     # ответ на сообщение
+    await message.answer(f"Доброго времени, {message.from_user.full_name} напиши мне любой текст, и я переведу его на английский язык.", reply_markup=kb.main)     # ответ на сообщение
 
 @dp.message(Command('help'))
 async def help(message: Message):
